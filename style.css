@@ -23,47 +23,107 @@ h1,h2,h3{
 /* HERO */
 .hero{
     height:100vh;
-    background:url('image/image_1.png') right center / cover fixed;
+    position:relative;
+
+    background:url('image/image_1.png') right center / cover no-repeat;
+    
     display:flex;
     flex-direction:column;
-    justify-content:space-between;
     align-items:center;
-    color:white;
+    justify-content:center;
+
     text-align:center;
-    padding:40px;
+    padding:20px;
+    overflow:hidden;
 }
 
+/* OVERLAY BIAR ELEGANT */
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(76, 0, 130, 0.123),
+        rgba(0, 0, 0, 0.182)
+    );
+    z-index:1;
+}
+
+/* CONTENT */
 .hero-content{
     position:relative;
     z-index:2;
+    width:100%;
+    max-width:500px;
 }
 
+/* BAGIAN ATAS (TITLE) */
+.hero-content.top{
+    position:absolute;
+    top:50px;
+}
+
+/* BAGIAN TENGAH (NAMA TAMU) */
+.hero-content.middle{
+    position:absolute;
+    bottom:120px; /* ⬅️ ini kunci, deket ke tombol */
+    transform:none;
+}
+
+/* TITLE */
 .hero-content h1{
-    color:#f3eaff;
-    text-shadow: 0 3px 15px rgba(0,0,0,0.5);
+    color:#fff;
+    font-size:28px;
+    letter-spacing:2px;
+
+    text-shadow:0 5px 20px rgba(0,0,0,0.7);
 }
 
-.hero-content p,
-.hero-content h3{
+/* SUB TEXT */
+.hero-content p{
     color:#E6E6FA;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    font-size:14px;
+    margin-bottom:5px;
 }
 
+/* NAMA TAMU */
+.hero-content h3{
+    color:#fff;
+    font-size:20px;
+
+    background:linear-gradient(135deg, #FFD700, #C9A23A);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* BUTTON */
 .btn{
-    background:var(--lavender);
+    position:absolute;
+    bottom:50px;
+
+    background:linear-gradient(135deg, #967BB6, #E6E6FA);
     border:none;
     padding:12px 30px;
     border-radius:30px;
-    color:white;
+
+    color:#4B0082;
+    font-weight:600;
+
     cursor:pointer;
-    transition:.3s;
-    margin-bottom: 50px;
+    transition:0.3s;
+
+    z-index:2;
+
+    box-shadow:0 5px 20px rgba(150,123,182,0.4);
 }
 
+/* HOVER */
 .btn:hover{
-    transform:scale(1.1);
+    transform:scale(1.08);
+    box-shadow:0 8px 25px rgba(150,123,182,0.6);
 }
-
+/* END HERO */
 /* CARD */
 .card{
     min-height:100vh;
