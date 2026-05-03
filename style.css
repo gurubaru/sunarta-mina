@@ -94,7 +94,7 @@ h1,h2,h3{
     height:100vh;
     position:relative;
 
-    background:url('image/image_1.png') right center / cover no-repeat;
+    background:url('image/image_1.jpg') right center / cover no-repeat;
     
     display:flex;
     flex-direction:column;
@@ -309,7 +309,7 @@ h1,h2,h3{
 
     min-height:100vh; /* ⬅️ jangan pakai height */
 
-    background:url('image/image_2.png') center / cover no-repeat;
+    background:url('image/image_2.jpg') center / cover no-repeat;
 
     color:#f9b005;
     text-shadow: #000 1px 0 10px;
