@@ -173,3 +173,98 @@ function openInvitation(){
         wedding.play();
     };
 }
+
+// CARD GIFT
+function copyRek(id){
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text);
+
+    alert("Nomor rekening berhasil disalin");
+}
+
+// komentar
+const API_URL = "https://script.google.com/macros/s/AKfycbzesfbWIzUp6qEOrSTO5A5fbr5PuAaRToHRXRBpdx7ZeKS4Qg5CrlAVB4FiBl7oliIb/exec";
+
+function addComment(){
+    const name = document.getElementById("name").value;
+    const message = document.getElementById("message").value;
+    const status = document.getElementById("commentStatus");
+
+    if(name === "" || message === ""){
+        alert("Isi dulu bro 😄");
+        return;
+    }
+
+    // ⬅️ tampilkan loading
+    status.innerText = "Mengirim ucapan";
+    status.classList.add("loading");
+
+    fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify({
+            name: name,
+            message: message
+        })
+    })
+    .then(res => res.json())
+    .then(() => {
+        status.innerText = "Ucapan terkirim 💜";
+        status.classList.remove("loading");
+
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = "";
+
+        loadComments();
+
+        // hilangkan status setelah 2 detik
+        setTimeout(()=>{
+            status.innerText = "";
+        }, 2000);
+    })
+    .catch(()=>{
+        status.innerText = "Gagal mengirim 😢";
+        status.classList.remove("loading");
+    });
+}
+
+function loadComments(){
+    fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+
+        const list = document.getElementById("commentList");
+        list.innerHTML = "";
+
+        data.reverse().forEach((c, i) => {
+            const div = document.createElement("div");
+            div.className = "comment";
+
+            const date = new Date(c.time).toLocaleString("id-ID", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+
+            div.innerHTML = `
+                <div class="comment-header">
+                    <h4>${c.name}</h4>
+                    <span class="time">${date}</span>
+                </div>
+                <p>${c.message}</p>
+            `;
+
+            list.appendChild(div);
+
+            setTimeout(()=>{
+                div.classList.add("show");
+            }, i * 100);
+        });
+    })
+    .catch(err => {
+        console.error(err);
+    });
+}
+
+window.onload = loadComments;
