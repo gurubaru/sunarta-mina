@@ -118,7 +118,7 @@
             <img src="image/groom.jpg" class="oval">
             <h3>I Ketut Sunarta</h3>
             <p class="sub">Putra keempat dari</p>
-            <p>I Made Kacung(alm) & Ni Wayan Mangkin</p>
+            <p>I Made Kacung(alm) <br> & <br> Ni Wayan Mangkin</p>
             <p class="addr">Br. Batuaji, Desa Batubulan kangin, Sukawati - Gianyar</p>
         </div>
 
@@ -132,7 +132,7 @@
             <img src="image/bride.jpg" class="oval">
             <h3>Ni Komang Mina</h3>
             <p class="sub">Putri ketiga dari</p>
-            <p>I Ketut Suana & Ni Made Bari (alm)</p>
+            <p>I Ketut Suana <br> & <br> Ni Made Bari (alm)</p>
             <p class="addr">Br. Batuaji, Desa Batubulan kangin, Sukawati - Gianyar</p>
         </div>
 
@@ -205,7 +205,7 @@
             </div>
         </div>
 
-        <div class="slide" style="background-image:url('image/image_6.JPG')">
+        <div class="slide" style="background-image:url('image/image_16.jpg')">
             <div class="caption">
                 <h3>Perkenalan</h3>
                 <p>Dari sekadar kenal, kami mulai berbagi cerita dan tawa.</p>
@@ -216,6 +216,13 @@
             <div class="caption">
                 <h3>Kedekatan</h3>
                 <p>Hari demi hari, kami semakin dekat dan saling memahami.</p>
+            </div>
+        </div>
+
+        <div class="slide" style="background-image:url('image/image_18.jpg')">
+            <div class="caption">
+                <h3>Perjalanan</h3>
+                <p>Banyak momen indah dan tantangan yang kami lalui bersama.</p>
             </div>
         </div>
 
@@ -242,13 +249,37 @@
 <!-- CARD 6 GALLERY -->
 <section>
     <div class="gallery">
-        <img src="image/image_11.JPG">
+        <img src="image/image_17.jpg">
         <img src="image/image_12.JPG">
         <img src="image/image_13.JPG">
         <img src="image/image_14.JPG">
         <img src="image/image_15.JPG">
         <img src="image/image_8.JPG">
     </div>
+</section>
+
+<!-- CARD GIFT -->
+<section class="gift-section fade-up">
+
+    <h2 class="gift-title">Wedding Gift</h2>
+    <p class="gift-desc">
+        Doa restu Anda adalah hadiah terindah. Namun jika ingin berbagi kasih, dapat melalui:
+    </p>
+
+    <div class="gift-wrapper">
+
+        <div class="gift-card">
+            <img src="image/bca.jpg" class="bank-logo">
+
+            <h3>Bank BCA</h3>
+            <p class="rekening" id="rek1">7730913022</p>
+            <p>a.n. I KETUT SUNARTA</p>
+
+            <button onclick="copyRek('rek1')">Salin Rekening</button>
+        </div>
+
+    </div>
+
 </section>
 
 <!-- CARD 7 -->
@@ -267,6 +298,23 @@
         </p>
 
     </div>
+
+</section>
+
+<!-- komentar -->
+ <section class="comment-section fade-up">
+
+    <h2 class="comment-title">Ucapan & Doa</h2>
+    <p class="comment-sub">Berikan ucapan terbaik untuk kami 💜</p>
+
+    <div class="comment-form">
+        <input type="text" id="name" placeholder="Nama Anda">
+        <textarea id="message" placeholder="Tulis ucapan..."></textarea>
+        <button onclick="addComment()">Kirim Ucapan</button>
+    </div>
+
+    <div id="commentStatus" class="comment-status"></div>
+    <div id="commentList" class="comment-list"></div>
 
 </section>
 
