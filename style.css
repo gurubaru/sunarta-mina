@@ -94,7 +94,7 @@ h1,h2,h3{
     height:100vh;
     position:relative;
 
-    background:url('image/image_1.jpg') right center / cover no-repeat;
+    background:url('image/image_1.svg') right center / cover no-repeat;
     
     display:flex;
     flex-direction:column;
@@ -136,7 +136,7 @@ h1,h2,h3{
 /* BAGIAN TENGAH (NAMA TAMU) */
 .hero-content.middle{
     position:absolute;
-    bottom:120px; /* ⬅️ ini kunci, deket ke tombol */
+    bottom:170px; /* ⬅️ ini kunci, deket ke tombol */
     transform:none;
 }
 
@@ -169,7 +169,7 @@ h1,h2,h3{
 /* BUTTON */
 .btn{
     position:absolute;
-    bottom:50px;
+    bottom:100px;
 
     background:linear-gradient(135deg, #967BB6, #E6E6FA);
     border:none;
@@ -351,7 +351,7 @@ h1,h2,h3{
 /* BOTTOM */
 .card1-bottom{
     position:absolute;
-    bottom:30px;
+    bottom:50px;
     left:50%;
     transform:translateX(-50%);
 }
@@ -388,13 +388,17 @@ h1,h2,h3{
 }
 /* END CARD 1 */
 
+/* CARD 2 */
 .card-2{
     min-height:auto;   /* ⬅️ penting */
-    padding:80px 20px;
-    background:linear-gradient(to bottom, #f404f0, #fff);
+    padding:20px 20px;
     border-radius: 15px;
     box-shadow: #070000 0px 0px 20px;
     margin: 10px 10px;
+    background-image: url('image/image_6.JPG');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .fade-soft{
@@ -416,14 +420,15 @@ h1,h2,h3{
 .card-2 .ayat{
     font-style:italic;
     font-size:15px;
-    color:#000000;
+    color:#f5d63b;
     margin-bottom:15px;
 }
 
 .card-2 .arti{
     font-size:13px;
-    color:#090000;
+    color:#f3c45e;
     margin-bottom:10px;
+    text-shadow: #000 1px 0 10px;
 }
 
 .card-2 .sumber{
@@ -450,6 +455,23 @@ h1,h2,h3{
         transform:translateY(0);
         filter:blur(0);
     }
+}
+
+.ayat-img{
+    width:60px; /* kecil elegant */
+    margin:25px auto 0;
+    display:block;
+
+    opacity:0.8;
+    filter:drop-shadow(0 5px 10px rgba(150,123,182,0.3));
+
+    animation:floatAyat 4s ease-in-out infinite;
+}
+
+/* efek floating halus */
+@keyframes floatAyat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
 }
 /* END CARD 2 */
 
@@ -807,7 +829,7 @@ h1,h2,h3{
 /* CARD 7 */
 /* BACKGROUND */
 .card-7{
-    padding:100px 20px;
+    padding:20px 20px;
     text-align:center;
 
     background:linear-gradient(
