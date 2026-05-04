@@ -44,7 +44,7 @@ h1,h2,h3{
         display:block;
         position:relative;
 
-        background:url('image/paralax_1.png') center center / cover no-repeat;
+        background:url('image/paralax_1.jpg') center center / cover no-repeat;
 
         height:100vh;
     }
@@ -605,7 +605,12 @@ h1,h2,h3{
 
 /* CARD 4 BACKGROUND */
 .card-4{
-    background:linear-gradient(270deg, #ea08f2, #E6E6FA);
+    background:linear-gradient(
+        135deg,
+        #4B0082,   /* ungu */
+        #800020,   /* maroon */
+        #2e003e    /* deep purple */
+    );
     padding:30px 20px;
 }
 
@@ -614,7 +619,7 @@ h1,h2,h3{
     max-width:600px;
     margin:0 auto 40px;
     text-align:center;
-    color:#000;
+    color:#f5d63b;
 }
 
 /* WRAPPER */
@@ -698,7 +703,7 @@ h1,h2,h3{
 /* CLOSING */
 .closing{
     text-align:center;
-    color:#555;
+    color:#f5d63b;
 }
 /* END CARD 4 */
 
