@@ -21,23 +21,40 @@ function openInvitation(){
     startFlower();
     loadComments();
 
-    // OPTIONAL MUSIC (aktifkan kalau audio ada)
-    const first = document.getElementById("musicFirst");
-    const wedding = document.getElementById("musicWedding");
+    // Playlist musik
+    const playlist = [
+        document.getElementById("musicFirst"),
+        document.getElementById("lyrics"),
+        document.getElementById("dol"),
+        document.getElementById("syl"),
+        document.getElementById("musicWedding")
+    ].filter(Boolean); // buang null kalau ada id yg ga ketemu
 
-    if(first && wedding){
-        first.volume = 0.5;
-        wedding.volume = 0.5;
+    if(playlist.length > 0){
+        // set volume semua
+        playlist.forEach(m => m.volume = 0.5);
 
-        first.play().catch(()=>{});
+        let index = 0;
 
-        first.onended = function(){
-            wedding.loop = true;
-            wedding.play().catch(()=>{});
-        };
+        function playNext(){
+            const current = playlist[index];
+            if(!current) return;
+
+            current.currentTime = 0;
+            current.play().catch(()=>{});
+
+            current.onended = function(){
+                index++;
+                if(index >= playlist.length){
+                    index = 0; // balik ke awal
+                }
+                playNext();
+            };
+        }
+
+        playNext();
     }
 }
-
 /* ======================
    SCROLL ANIMATION
 ====================== */
