@@ -281,3 +281,39 @@ function loadComments(){
         });
     });
 }
+
+/* ======================
+PARALLAX DOOR ANIMATION
+====================== */
+
+const parallaxDoor = document.getElementById("parallaxDoor");
+
+let doorTimeout;
+
+const doorObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            // delay sebelum buka
+            doorTimeout = setTimeout(()=>{
+                parallaxDoor.classList.add("active");
+            }, 3000); // 2.5 detik
+
+        }else{
+
+            // batalin delay kalau keburu keluar
+            clearTimeout(doorTimeout);
+
+            // tutup kembali
+            parallaxDoor.classList.remove("active");
+        }
+
+    });
+},{
+    threshold:0.6
+});
+
+if(parallaxDoor){
+    doorObserver.observe(parallaxDoor);
+}
