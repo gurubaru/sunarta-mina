@@ -588,18 +588,87 @@ h1,h2,h3{
 }
 /* END CARD 3 */
 
-/* PARALAX */
+/* PARALLAX DOOR */
 .parallax{
-    min-height:300px; /* ⬅️ fleksibel, jangan height fix */
-
-    background:url('image/paralax_1.jpg') center center / cover no-repeat;
+    min-height:300px;
+    position:relative;
+    overflow:hidden;
 
     display:flex;
     align-items:center;
     justify-content:center;
+}
 
-    position:relative;
-    overflow:hidden;
+/* FOTO UTAMA */
+.parallax-main{
+    position:absolute;
+    inset:0;
+
+    background:url('image/paralax_1.jpg') center center / cover no-repeat;
+
+    transform:scale(1.05);
+    transition:transform 1s ease;
+}
+
+.parallax::after{
+    content:'';
+    position:absolute;
+    inset:0;
+
+    background:radial-gradient(
+        circle,
+        rgba(180,140,255,0.15),
+        transparent 70%
+    );
+
+    z-index:1;
+    pointer-events:none;
+}
+
+/* PINTU */
+.door{
+    position:absolute;
+    top:0;
+    width:50%;
+    height:100%;
+
+    background-size:cover;
+    background-position:center;
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+    background-repeat:no-repeat;
+
+    z-index:2;
+
+    transition:transform 1.2s cubic-bezier(.77,0,.18,1);
+}
+
+/* kiri */
+.door-left{
+    left:0;
+    background-image:url('image/left_door.jpg');
+    transform-origin:right center;
+    background-position:100% center;
+}
+
+/* kanan */
+.door-right{
+    right:0;
+    background-image:url('image/right_door.jpg');
+    transform-origin:left center;
+    background-position:0% center;
+}
+
+/* SAAT TERBUKA */
+.parallax.active .door-left{
+    transform:translateX(-100%);
+}
+
+.parallax.active .door-right{
+    transform:translateX(100%);
+}
+
+.parallax.active .parallax-main{
+    transform:scale(1);
 }
 /* END PARALAX */
 
