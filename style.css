@@ -736,9 +736,9 @@ h1,h2,h3{
     background:
     linear-gradient(
         to top,
-        rgba(75,0,130,0.55),
-        rgba(150,123,182,0.35),
-        rgba(230,230,250,0.15)
+        rgba(76, 0, 130, 0.638),
+        rgba(150, 123, 182, 0.347),
+        rgba(230, 230, 250, 0)
     );
 
     z-index:1;
