@@ -139,27 +139,38 @@ document.querySelectorAll('.reveal-text').forEach(el=>{
 document.addEventListener("DOMContentLoaded", function(){
 
     let currentSlide = 0;
+
     const slides = document.querySelectorAll(".slide");
     const dotsContainer = document.querySelector(".dots");
+    const progressBar = document.querySelector(".progress-bar");
 
     if(!slides.length) return;
 
     slides.forEach((_, i)=>{
+
         const dot = document.createElement("span");
         dot.className = "dot";
-        if(i === 0) dot.classList.add("active");
+
+        if(i === 0){
+            dot.classList.add("active");
+        }
 
         dot.onclick = ()=>{
+
             currentSlide = i;
+
             showSlide();
+            resetProgress();
         };
 
         dotsContainer.appendChild(dot);
+
     });
 
     const dots = document.querySelectorAll(".dot");
 
     function showSlide(){
+
         slides.forEach(s=>s.classList.remove("active"));
         dots.forEach(d=>d.classList.remove("active"));
 
@@ -167,12 +178,33 @@ document.addEventListener("DOMContentLoaded", function(){
         dots[currentSlide].classList.add("active");
     }
 
-    setInterval(()=>{
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide();
-    },4000);
-});
+    function resetProgress(){
 
+        progressBar.style.transition = "none";
+        progressBar.style.width = "0%";
+
+        setTimeout(()=>{
+
+            progressBar.style.transition = "width 4s linear";
+            progressBar.style.width = "100%";
+
+        },50);
+    }
+
+    function nextSlide(){
+
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        showSlide();
+        resetProgress();
+    }
+
+    // start pertama
+    resetProgress();
+
+    setInterval(nextSlide, 4000);
+
+});
 /* ======================
    COPY REKENING
 ====================== */
