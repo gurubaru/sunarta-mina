@@ -923,20 +923,18 @@ h1,h2,h3{
     object-fit:cover;
 
     opacity:0;
-    transform:scale(1.05);
-
-    filter:blur(10px);
+    transform:translateY(20px) scale(.98);
 
     transition:
-        opacity .8s ease,
-        transform .8s ease,
-        filter .8s ease;
+        opacity .7s ease,
+        transform .7s ease;
+
+    will-change:transform, opacity;
 }
 
 .gallery img.loaded{
     opacity:1;
-    transform:scale(1);
-    filter:blur(0);
+    transform:translateY(0) scale(1);
 }
 .gallery img:hover{
     transform:scale(1.05);
