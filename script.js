@@ -317,3 +317,24 @@ const doorObserver = new IntersectionObserver((entries)=>{
 if(parallaxDoor){
     doorObserver.observe(parallaxDoor);
 }
+
+/* ======================
+    LAZY LOAD IMAGES
+    ====================== */
+    const lazyImages = document.querySelectorAll('img[data-src]');
+
+    const lazyObserver = new IntersectionObserver((entries, observer)=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.removeAttribute('data-src');
+                observer.unobserve(img);
+            }
+        });
+
+    },{
+        rootMargin: "0px 0px 200px 0px"
+    });
+
+    lazyImages.forEach(img=>lazyObserver.observe(img));
