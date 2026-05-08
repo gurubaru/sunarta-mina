@@ -922,13 +922,21 @@ h1,h2,h3{
     height:180px;
     object-fit:cover;
 
-    border-radius:15px;
-
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-
     opacity:0;
-    transform:translateY(30px);
-    transition:0.6s;
+    transform:scale(1.05);
+
+    filter:blur(10px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        filter .8s ease;
+}
+
+.gallery img.loaded{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
 }
 .gallery img:hover{
     transform:scale(1.05);
