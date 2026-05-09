@@ -346,3 +346,29 @@ const lazyObserver = new IntersectionObserver((entries, observer)=>{
 });
 
 lazyImages.forEach(img=>lazyObserver.observe(img));
+
+/* ======================
+    DARK MODE TOGGLE
+====================== */
+const toggleBtn = document.getElementById("themeToggle");
+
+/* load saved mode */
+if(localStorage.getItem("theme") === "night"){
+    document.body.classList.add("night");
+    toggleBtn.innerHTML = "☀️";
+}
+
+/* toggle click */
+toggleBtn.addEventListener("click", ()=>{
+
+    document.body.classList.toggle("night");
+
+    if(document.body.classList.contains("night")){
+        localStorage.setItem("theme","night");
+        toggleBtn.innerHTML = "☀️";
+    }else{
+        localStorage.setItem("theme","light");
+        toggleBtn.innerHTML = "🌙";
+    }
+
+});
