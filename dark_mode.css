@@ -1,0 +1,376 @@
+/* =========================================
+   NIGHT MODE
+========================================= */
+body.night{
+    background:#0f0718;
+    color:#f5ecff;
+}
+
+/* RIGHT SIDE */
+body.night .right-side{
+    background:#12091d;
+}
+
+/* HERO */
+body.night .hero::before{
+    background:linear-gradient(
+        to bottom,
+        rgba(15, 7, 24, 0.45),
+        rgba(0,0,0,0.75)
+    );
+}
+
+/* BUTTON */
+body.night .btn{
+    background:linear-gradient(135deg,#3b1c5f,#8d6bc5);
+    color:#fff;
+
+    box-shadow:0 5px 25px rgba(141,107,197,0.35);
+}
+
+body.night .btn:hover{
+    box-shadow:0 8px 30px rgba(180,140,255,0.55);
+}
+
+/* LIGHT SECTION */
+body.night .light{
+    background:#181022;
+    color:#f5ecff;
+}
+
+/* CARD 1 */
+body.night .card-1{
+    color:#ffd86b;
+}
+
+body.night .card1-middle{
+    background:rgba(44, 19, 74, 0.72);
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.45),
+        0 0 25px rgba(150,123,182,0.18);
+}
+
+body.night .countdown .box{
+    background:rgba(20,10,30,0.72);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* CARD 2 */
+body.night .card-2{
+    box-shadow:
+        0 0 25px rgba(0,0,0,0.6),
+        0 0 40px rgba(120,80,180,0.12);
+}
+
+body.night .card-2 .ayat{
+    color:#ffe082;
+}
+
+body.night .card-2 .arti{
+    color:#f9d48f;
+}
+
+body.night .card-2 .sumber{
+    color:#b7a7c7;
+}
+
+/* CARD 3 */
+body.night .card-3{
+    background:linear-gradient(
+        to bottom,
+        #130b1f,
+        #1c1229
+    );
+}
+
+body.night .card-3 .title{
+    color:#d8b4ff;
+}
+
+body.night .card-3 .opening{
+    color:#caa7ff;
+}
+
+body.night .card-3 .desc{
+    color:#d4c5e6;
+}
+
+/* COUPLE */
+body.night .couple h3{
+    color:#f3d3ff;
+}
+
+body.night .sub{
+    color:#c8b7d8;
+}
+
+body.night .addr{
+    color:#9f8db3;
+}
+
+body.night .couple img{
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.5),
+        0 0 30px rgba(170,120,255,0.18);
+}
+
+/* CARD 4 */
+body.night .event-card{
+    background:rgba(24,14,34,0.72);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.45),
+        0 0 25px rgba(150,123,182,0.1);
+}
+
+body.night .event-card h2{
+    color:#f0d4ff;
+}
+
+body.night .event-card p{
+    color:#d8cbe6;
+}
+
+body.night .btn-map{
+    background:linear-gradient(
+        135deg,
+        #3b1c5f,
+        #8d6bc5
+    );
+
+    color:#fff;
+}
+
+/* SLIDER */
+body.night .caption{
+    background:rgba(15,8,24,0.55);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.45),
+        0 0 20px rgba(180,120,255,0.12);
+}
+
+body.night .caption p{
+    color:#f3ebff;
+}
+
+body.night .dot{
+    background:rgba(255,255,255,0.18);
+}
+
+body.night .dot.active{
+    background:#d8b4ff;
+    box-shadow:0 0 15px #c084fc;
+}
+
+/* GALLERY */
+body.night .gallery img{
+    border-radius:16px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.4),
+        0 0 15px rgba(180,120,255,0.08);
+}
+
+body.night .gallery img:hover{
+    filter:brightness(1.05);
+}
+
+/* GIFT */
+body.night .gift-section{
+    background:linear-gradient(
+        to bottom,
+        #140b20,
+        #0f0718
+    );
+}
+
+body.night .gift-title{
+    color:#f0d4ff;
+}
+
+body.night .gift-desc{
+    color:#b8a9c7;
+}
+
+body.night .gift-card{
+    background:linear-gradient(
+        135deg,
+        #2d1848,
+        #4d2f73
+    );
+
+    color:#fff;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.5),
+        0 0 25px rgba(170,120,255,0.12);
+}
+
+body.night .gift-card button{
+    background:#d8b4ff;
+    color:#2e004f;
+}
+
+body.night .gift-card button:hover{
+    background:#f1dcff;
+}
+
+/* COMMENT */
+body.night .comment-section{
+    background:linear-gradient(
+        to bottom,
+        #100818,
+        #1b1027
+    );
+}
+
+body.night .comment-title{
+    color:#f0d4ff;
+}
+
+body.night .comment-sub{
+    color:#a996bc;
+}
+
+/* FORM */
+body.night .comment-form input,
+body.night .comment-form textarea{
+    background:#1f142d;
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#fff;
+}
+
+body.night .comment-form input::placeholder,
+body.night .comment-form textarea::placeholder{
+    color:#9b88b2;
+}
+
+body.night .comment-form input:focus,
+body.night .comment-form textarea:focus{
+    border-color:#c084fc;
+
+    box-shadow:
+        0 0 15px rgba(192,132,252,0.3);
+}
+
+body.night .comment-form button{
+    background:linear-gradient(
+        135deg,
+        #3b1c5f,
+        #8d6bc5
+    );
+
+    color:#fff;
+}
+
+/* COMMENT ITEM */
+body.night .comment{
+    background:linear-gradient(
+        135deg,
+        #1b1128,
+        #251734
+    );
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.35),
+        0 0 15px rgba(180,120,255,0.08);
+}
+
+body.night .comment h4{
+    color:#f0d4ff;
+}
+
+body.night .comment p{
+    color:#d8cbe6;
+}
+
+body.night .time{
+    color:#8d7aa5;
+}
+
+/* SCROLLBAR */
+body.night ::-webkit-scrollbar{
+    width:8px;
+}
+
+body.night ::-webkit-scrollbar-track{
+    background:#140b20;
+}
+
+body.night ::-webkit-scrollbar-thumb{
+    background:#5d3b8b;
+    border-radius:10px;
+}
+
+body.night ::-webkit-scrollbar-thumb:hover{
+    background:#8d6bc5;
+}
+
+/* =========================================
+   THEME TOGGLE BUTTON
+========================================= */
+.theme-toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:9999;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+
+    background:rgba(20,10,30,0.45);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.35),
+        0 0 15px rgba(180,120,255,0.15);
+
+    transition:0.35s ease;
+}
+
+/* hover */
+.theme-toggle:hover{
+    transform:scale(1.08) rotate(10deg);
+
+    background:rgba(80,50,120,0.6);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.4),
+        0 0 20px rgba(200,160,255,0.35);
+}
+
+/* saat dark mode aktif */
+body.night .theme-toggle{
+    background:rgba(255,255,255,0.08);
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.45),
+        0 0 25px rgba(192,132,252,0.25);
+}
