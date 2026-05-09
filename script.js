@@ -324,9 +324,7 @@ if(parallaxDoor){
 const lazyImages = document.querySelectorAll('img[data-src]');
 
 const lazyObserver = new IntersectionObserver((entries, observer)=>{
-
     entries.forEach(entry=>{
-
         if(entry.isIntersecting){
 
             const img = entry.target;
@@ -334,24 +332,17 @@ const lazyObserver = new IntersectionObserver((entries, observer)=>{
             img.src = img.dataset.src;
 
             img.onload = ()=>{
-
-                requestAnimationFrame(()=>{
-
-                    img.classList.add('loaded');
-
-                });
-
+                img.classList.add('loaded');
             };
 
             img.removeAttribute('data-src');
 
             observer.unobserve(img);
         }
-
     });
 
 },{
-    rootMargin:"0px 0px 300px 0px"
+    rootMargin:"0px 0px 200px 0px"
 });
 
 lazyImages.forEach(img=>lazyObserver.observe(img));
