@@ -932,9 +932,13 @@ h1,h2,h3{
     will-change:transform, opacity;
 }
 
-.gallery img.loaded{
+img{
+    opacity:0;
+    transition:opacity .5s ease;
+}
+
+img.loaded{
     opacity:1;
-    transform:translateY(0) scale(1);
 }
 .gallery img:hover{
     transform:scale(1.05);
