@@ -23,11 +23,7 @@ function openInvitation(){
 
     // Playlist musik
     const playlist = [
-        document.getElementById("musicFirst"),
-        document.getElementById("lyrics"),
-        document.getElementById("dol"),
-        document.getElementById("syl"),
-        document.getElementById("musicWedding")
+        document.getElementById("musicFirst")
     ].filter(Boolean); // buang null kalau ada id yg ga ketemu
 
     if(playlist.length > 0){
